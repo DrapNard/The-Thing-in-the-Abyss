@@ -2,12 +2,12 @@
 using BepInEx.Logging;
 using HarmonyLib;
 using System.Reflection;
-using The_Thing_in_the_Abyss.Items.Equipment;
+using The_Thing_in_the_Abyss.Items.Creatur;
 
 namespace The_Thing_in_the_Abyss
 {
     [BepInPlugin(PluginInfo.PLUGIN_GUID, PluginInfo.PLUGIN_NAME, PluginInfo.PLUGIN_VERSION)]
-    [BepInDependency("com.snmodding.nautilus")]
+    [BepInDependency("com.drapnard.thethingintheabyss")]
     public class Plugin : BaseUnityPlugin
     {
         public new static ManualLogSource Logger { get; private set; }
