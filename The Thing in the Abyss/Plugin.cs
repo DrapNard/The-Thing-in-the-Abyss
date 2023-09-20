@@ -2,12 +2,14 @@
 using BepInEx.Logging;
 using HarmonyLib;
 using System.Reflection;
-using The_Thing_in_the_Abyss.Items.Creatur;
+using System.Diagnostics;
+using System;
+
 
 namespace The_Thing_in_the_Abyss
 {
     [BepInPlugin(PluginInfo.PLUGIN_GUID, PluginInfo.PLUGIN_NAME, PluginInfo.PLUGIN_VERSION)]
-    [BepInDependency("com.drapnard.thethingintheabyss")]
+    [BepInDependency("com.snmodding.nautilus")]
     public class Plugin : BaseUnityPlugin
     {
         public new static ManualLogSource Logger { get; private set; }
@@ -25,11 +27,13 @@ namespace The_Thing_in_the_Abyss
             // register harmony patches, if there are any
             Harmony.CreateAndPatchAll(Assembly, $"{PluginInfo.PLUGIN_GUID}");
             Logger.LogInfo($"Plugin {PluginInfo.PLUGIN_GUID} is loaded!");
+
+            
         }
 
         private void InitializePrefabs()
         {
-            YeetKnifePrefab.Register();
+            
         }
     }
 }
